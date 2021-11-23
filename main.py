@@ -6,8 +6,6 @@ from lexerRules import lexerRules
 
 
 
-
-
 if __name__ == '__main__':
     
     # Menerima input file, dibuka pathnya kemudian menggunakan fungsi open dan method read.
@@ -86,8 +84,8 @@ if __name__ == '__main__':
                 jmlerror+=1
     # Cek apakah ada error yang ditemukan atau tidak
     if (jmlerror == 0) :
-        print("Accepted!")
+        print(" Accepted!")
     else :
-        print("{} Error(s) detected on the file.".format(jmlerror))
+        print("{} Error yang ditemukan dalam file.".format(jmlerror))
     finalTime = time.time()
     print("Time Execution: ", "{:.5f}".format(finalTime - initTime), "second(s)")

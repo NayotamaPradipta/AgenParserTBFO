@@ -1,8 +1,4 @@
 import re
-import os
-import lexerRules
-import CYKparser as parser
-
 
 # menerima error lexer digunakan pada kelas Changing fungsi token dnegna mengoper-oper objeknya
 # Jika tidak ada pasangan dalam matching sehingga mengembalikan string error position dan berhenti LEXERERROR, tapi ngga wajib, buat meriksanya nanti
