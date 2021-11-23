@@ -61,7 +61,6 @@ class Changing(object):
                 break
             yield hasiltoken
 
-CYK = parser.Parser('grammar.txt', " COMMENT ")
 
 
 

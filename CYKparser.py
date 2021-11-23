@@ -1,5 +1,4 @@
 import os.path
-import argparse
 import cfgtocnf
 
 class Node:
@@ -60,13 +59,22 @@ class Parser:
             for starting_cell in range(0, length - words_to_consider + 1):
                 for left_size in range(1, words_to_consider):
                     right_size = words_to_consider - left_size
-
                     left_cell = self.parse_table[left_size - 1][starting_cell]
                     right_cell = self.parse_table[right_size - 1][starting_cell + left_size]
-
                     for rule in self.grammar:
                         left_nodes = [n for n in left_cell if n.symbol == rule[1]]
                         if left_nodes:
                             right_nodes = [n for n in right_cell if n.symbol == rule[2]]
                             self.parse_table[words_to_consider - 1][starting_cell].extend([Node(rule[0], left, right) for left in left_nodes for right in right_nodes])
+    def print_tree(self, output=True):
+        start_symbol = self.grammar[0][0]
+        final_nodes = [n for n in self.parse_table[-1][0] if n.symbol == start_symbol]
+        if final_nodes:
+            if output:
+                return True
+        else:
+            
+            print("The given sentence is not contained in the language produced by the given grammar!")
+            print(self.sentence)
+            return False
             

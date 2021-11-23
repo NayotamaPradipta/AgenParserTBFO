@@ -3,7 +3,7 @@ lexerRules = [
     (r'\d+',             'NUMBER'),
     (r'\d+.+\d',         'FLOAT'),
     # Identifier (Variable, Function, class, object, module, dll)
-    (r'[a-zA-Z_]\w+',    'IDENTIFIER'),
+    (r'[a-zA-Z_]+[\da-zA-Z_0-9]',    'IDENTIFIER'),
     # Mathematical Operators
     (r'\+',              'PLUS'),
     (r'\-',              'MINUS'),
@@ -67,4 +67,7 @@ lexerRules = [
     (r'raise\s',         'RAISE'),
     # Tambahan
     (r'print',           'PRINT'),
+    # Triple Quote 
+    (r'\"\"\"',          'TRIPLEQUOTE'),
+    (r'\'\'\'',          'TRIPLEQUOTE'),
 ]
