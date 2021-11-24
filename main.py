@@ -39,6 +39,7 @@ if __name__ == '__main__':
     key = 0
     ifkasus = 0
     print("Parsing {} line(s) of code...".format(total_string))
+    
     # Parsing
     CYK = parser.Parser('grammar.txt', " COMMENT ")
 
@@ -82,10 +83,11 @@ if __name__ == '__main__':
                             jmlerror += 1
             elif (countbaris  == total_string and key == 1 ):
                 jmlerror+=1
+    
     # Cek apakah ada error yang ditemukan atau tidak
     if (jmlerror == 0) :
-        print(" Accepted!")
+        print("Accepted!")
     else :
-        print("{} Error yang ditemukan dalam file.".format(jmlerror))
+        print("Syntax Error! {} error yang ditemukan dalam file.".format(jmlerror))
     finalTime = time.time()
     print("Time Execution: ", "{:.5f}".format(finalTime - initTime), "second(s)")
