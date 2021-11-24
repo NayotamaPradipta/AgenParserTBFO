@@ -3,7 +3,7 @@ from lexer import Changing
 import CYKparser as parser
 import time
 from lexerRules import lexerRules
-
+from testdfa import dfa
 
 
 if __name__ == '__main__':
@@ -15,6 +15,10 @@ if __name__ == '__main__':
     file_path = './' + input_file
     file = open(file_path, 'r')
     readstring = file.read()
+    file.close()
+    files = open(file_path,'r')
+    reading = files.readlines()
+    files.close()
     # Lexing 
     # membuat objek
     lx = Changing(lexerRules, skip_whitespace=False)
@@ -91,3 +95,4 @@ if __name__ == '__main__':
         print("Syntax Error! {} error yang ditemukan dalam file.".format(jmlerror))
     finalTime = time.time()
     print("Time Execution: ", "{:.5f}".format(finalTime - initTime), "second(s)")
+    # print("variabel error: ", dfa(reading))
