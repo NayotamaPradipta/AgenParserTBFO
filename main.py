@@ -89,10 +89,10 @@ if __name__ == '__main__':
                 jmlerror+=1
     
     # Cek apakah ada error yang ditemukan atau tidak
-    if (jmlerror == 0) :
+    errorvar = dfa(reading)
+    if (jmlerror == 0 and errorvar == 0):
         print("Accepted!")
     else :
-        print("Syntax Error! {} error yang ditemukan dalam file.".format(jmlerror))
+        print("Syntax Error! {} error yang ditemukan dalam file.".format(jmlerror + errorvar))
     finalTime = time.time()
     print("Time Execution: ", "{:.5f}".format(finalTime - initTime), "second(s)")
-    # print("variabel error: ", dfa(reading))

@@ -135,10 +135,8 @@ def dfa(readstring):
     def accepts(transition, start, s):
         states = start
         for char in s:
-            print(char)
             try:
                 states = transition[states][char]
-                print("this stataes", states)
             except KeyError:
                 return False
         return (states != 4)
@@ -152,7 +150,6 @@ def dfa(readstring):
     for k in hasil1:
         thisstring2 = re.sub('\s+','',k)
         hasil2.append(thisstring2)
-    print(hasil2)
     for l in range(len(hasil2)):
         if (accepts(dfa,0,hasil2[l])):
             consider = 'Accepted'
