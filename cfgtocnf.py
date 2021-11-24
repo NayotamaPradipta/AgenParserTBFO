@@ -1,5 +1,5 @@
 # Program untuk menkonversikan grammar CFG ke grammar CNF
-# Masih kopas raw dari https://github.com/RobMcH/CYK-Parser/blob/master/grammar_converter.py
+# Sudah dimodify sesuai dengan program sendiri
 
 # Global dictionary used for storing the rules.
 RULE_DICT = {}
